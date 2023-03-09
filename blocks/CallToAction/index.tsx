@@ -2,31 +2,34 @@
 import React from 'react';
 import Link from 'next/link';
 import { Block } from 'payload/types';
-import { Type as Page } from '../../collections/Page';
+import { Type as Page } from '../../collections/page';
 import RichText from '../../components/RichText';
 import classes from './index.module.css';
 
-export type Button = {
-  type: 'page'
-  label: string
-  page: Page
-} | {
-  type: 'custom'
-  label: string
-  url: string
-  newTab: boolean
-}
+export type Button =
+  | {
+      type: 'page';
+      label: string;
+      page: Page;
+    }
+  | {
+      type: 'custom';
+      label: string;
+      url: string;
+      newTab: boolean;
+    };
 
 export type Type = {
-  blockType: 'cta'
-  blockName?: string
-  content: unknown
-  buttons: Button[]
-}
+  blockType: 'cta';
+  blockName?: string;
+  content: unknown;
+  buttons: Button[];
+};
 
 type Data = Record<string, unknown>;
 
-const customURLCondition = (_: Data, siblings: Data): boolean => siblings.type === 'custom';
+const customURLCondition = (_: Data, siblings: Data): boolean =>
+  siblings.type === 'custom';
 
 export const CallToAction: Block = {
   slug: 'cta',
@@ -92,7 +95,8 @@ export const CallToAction: Block = {
           relationTo: 'pages',
           required: true,
           admin: {
-            condition: (_: Data, siblings: Data): boolean => siblings.type === 'page',
+            condition: (_: Data, siblings: Data): boolean =>
+              siblings.type === 'page',
           },
         },
         {
@@ -124,37 +128,29 @@ export const Component: React.FC<Type> = (props) => {
   return (
     <div className={classes.cta}>
       <div className={classes.wrap}>
-        <RichText
-          content={content}
-          className={classes.content}
-        />
+        <RichText content={content} className={classes.content} />
         {buttons && (
-        <ul className={classes.buttons}>
-          {buttons.map((button, i) => (
-            <li key={i}>
-              {button.type === 'page' && (
-                <Link
-                  href="[...slug]"
-                  as={`/${button.page.slug}`}
-                >
-                  <a className={classes.button}>
+          <ul className={classes.buttons}>
+            {buttons.map((button, i) => (
+              <li key={i}>
+                {button.type === 'page' && (
+                  <Link href="[...slug]" as={`/${button.page.slug}`}>
+                    <a className={classes.button}>{button.label}</a>
+                  </Link>
+                )}
+                {button.type === 'custom' && (
+                  <a
+                    className={classes.button}
+                    href={button.url}
+                    target={button.newTab ? '_blank' : undefined}
+                    rel="noopener noreferrer"
+                  >
                     {button.label}
                   </a>
-                </Link>
-              )}
-              {button.type === 'custom' && (
-                <a
-                  className={classes.button}
-                  href={button.url}
-                  target={button.newTab ? '_blank' : undefined}
-                  rel="noopener noreferrer"
-                >
-                  {button.label}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
+                )}
+              </li>
+            ))}
+          </ul>
         )}
       </div>
     </div>
