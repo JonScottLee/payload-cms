@@ -25,6 +25,7 @@
     "dotenv": "^16.0.0",
     "escape-html": "^1.0.3",
     "express": "^4.18.0",
+    "keyword-extractor": "^0.0.25",
     "next": "^12.1.0",
     "payload": "^1.6.3",
     "react": "^18.1.0",

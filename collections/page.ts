@@ -10,9 +10,10 @@ export type Layout = CallToActionType | ContentType | ImageType;
 
 export type Type = {
   title: string;
+  body: string;
   slug: string;
   image?: MediaType;
-  layout: Layout[];
+  // layout: Layout[];
   meta: {
     title?: string;
     description?: string;
@@ -36,19 +37,25 @@ export const Page: CollectionConfig = {
       required: true,
     },
     {
+      name: 'body',
+      label: 'Body',
+      type: 'textarea',
+      required: true,
+    },
+    {
       name: 'image',
       label: 'Featured Image',
       type: 'upload',
       relationTo: 'media',
     },
-    {
-      name: 'layout',
-      label: 'Page Layout',
-      type: 'blocks',
-      minRows: 1,
-      blocks: [CallToAction, Content, Image, TeamMember],
-    },
-    meta,
+    // {
+    //   name: 'layout',
+    //   label: 'Page Layout',
+    //   type: 'blocks',
+    //   minRows: 1,
+    //   blocks: [CallToAction, Content, Image, TeamMember],
+    // },
     slug,
+    meta,
   ],
 };

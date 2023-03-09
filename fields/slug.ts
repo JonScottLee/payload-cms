@@ -1,9 +1,9 @@
-import { formatSlug } from '../utilities/formatSlug';
+import { formatSlug } from '../utilities/format-slug';
 import { Field } from 'payload/types';
 
 export const slug: Field = {
   name: 'slug',
-  label: 'Page Slug',
+  label: 'Slug',
   type: 'text',
   admin: {
     position: 'sidebar',

@@ -1,9 +1,13 @@
 import type { Field } from 'payload/types';
+import { keywords } from './keywords';
 
 export const meta: Field = {
   name: 'meta',
   label: 'Page Meta',
   type: 'group',
+  admin: {
+    position: 'sidebar',
+  },
   fields: [
     {
       name: 'title',
@@ -15,10 +19,6 @@ export const meta: Field = {
       label: 'Description',
       type: 'textarea',
     },
-    {
-      name: 'keywords',
-      label: 'Keywords',
-      type: 'text',
-    },
+    keywords,
   ],
 };
