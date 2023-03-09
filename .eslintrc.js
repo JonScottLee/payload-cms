@@ -7,10 +7,7 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: [
-    '@trbl',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extends: ['@trbl', 'plugin:@typescript-eslint/recommended'],
   settings: {
     'import/resolver': {
       node: {
@@ -19,7 +16,11 @@ module.exports = {
     },
   },
   rules: {
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
     'import/prefer-default-export': 'off',
     'react/prop-types': 'off',
     'react/no-unused-prop-types': 'off',

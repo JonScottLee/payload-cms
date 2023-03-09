@@ -1,10 +1,7 @@
-import React from 'react';
-import type { AppProps } from 'next/app';
+import { ReactElement } from 'react';
 
 import '../css/style.css';
 
-const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => (
-  <Component {...pageProps} />
-);
+const App = (): ReactElement => <h1>Home</h1>;
 
-export default MyApp;
+export default App;
