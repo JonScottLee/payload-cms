@@ -1,8 +1,9 @@
 import { GlobalConfig } from 'payload/types';
 import { link } from '../fields/link';
 
-export const MainMenu: GlobalConfig = {
-  slug: 'main-menu',
+export const Footer: GlobalConfig = {
+  slug: 'footer',
+  label: 'Footer',
   fields: [
     {
       name: 'nav',
