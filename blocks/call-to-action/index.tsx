@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import Link from 'next/link';
 import { Block } from 'payload/types';
 import { Type as Page } from '../../collections/page';
-import RichText from '../../components/RichText';
 import classes from './index.module.css';
+import Link from 'next/link';
+import React from 'react';
+import RichText from '../../components/RichText';
 
 export type Button =
   | {
@@ -19,7 +18,7 @@ export type Button =
       newTab: boolean;
     };
 
-export type Type = {
+export type CallToActionType = {
   blockType: 'cta';
   blockName?: string;
   content: unknown;
@@ -122,7 +121,7 @@ export const CallToAction: Block = {
   ],
 };
 
-export const Component: React.FC<Type> = (props) => {
+export const Component: React.FC<CallToActionType> = (props) => {
   const { content, buttons } = props;
 
   return (
