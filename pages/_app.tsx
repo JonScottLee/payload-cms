@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app';
+import { MainMenu } from '../components/main-menu/main-menu';
 
 const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
   useEffect(() => {
@@ -10,7 +11,12 @@ const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
     }
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <MainMenu />
+      <Component {...pageProps} />;
+    </>
+  );
 };
 
 export default MyApp;
