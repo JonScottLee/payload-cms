@@ -41,7 +41,10 @@ export const MainMenu = () => {
 
   return (
     <nav>
-      <ul>{navItems && navItems.map(({ link }) => <li>{link.label}</li>)}</ul>
+      <ul>
+        {navItems &&
+          navItems.map(({ link }) => <li key={link.label}>{link.label}</li>)}
+      </ul>
     </nav>
   );
 };

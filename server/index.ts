@@ -26,6 +26,8 @@ const start = async () => {
 
     server.get('*', (req, res) => nextHandler(req, res));
 
+    server.post('*', (req, res) => nextHandler(req, res));
+
     nextApp.prepare().then(() => {
       console.log('NextJS started');
 
