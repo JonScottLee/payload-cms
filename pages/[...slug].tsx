@@ -3,10 +3,10 @@ import payload from 'payload';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import { Type as PageType } from '../collections/page';
-import NotFound from '../components/NotFound';
-import Head from '../components/Head';
+import NotFound from '../components/not-found';
+import Head from '../components/head';
 import classes from '../css/page.module.css';
-import RenderBlocks from '../components/RenderBlocks';
+import RenderBlocks from '../components/render-blocks';
 
 const {
   publicRuntimeConfig: { SERVER_URL },

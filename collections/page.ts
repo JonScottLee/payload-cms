@@ -1,8 +1,8 @@
 import { CollectionConfig } from 'payload/types';
 import { slug } from '../fields/slug';
 import { meta, Type as MetaType } from '../fields/meta';
-import { Content, Type as ContentType } from '../blocks/Content';
-import { Image, Type as ImageType } from '../blocks/Image';
+import { Content, Type as ContentType } from '../blocks/content';
+import { Image, Type as ImageType } from '../blocks/image';
 
 import { CallToAction, CallToActionType } from '../blocks/call-to-action';
 

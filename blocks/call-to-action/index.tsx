@@ -3,7 +3,7 @@ import { Type as Page } from '../../collections/page';
 import classes from './index.module.css';
 import Link from 'next/link';
 import React from 'react';
-import RichText from '../../components/RichText';
+import RichText from '../../components/rich-text';
 
 export type Button =
   | {

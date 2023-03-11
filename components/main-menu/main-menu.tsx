@@ -1,4 +1,4 @@
-import { apiRoutes } from '../../pages/api-routes';
+import { apiRoutes } from '../../api-routes';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 

@@ -4,7 +4,7 @@ import { sizes } from './sizes';
 import classes from './index.module.css';
 import NextImage from 'next/image';
 import React from 'react';
-import RichText from '../../components/RichText';
+import RichText from '../../components/rich-text';
 
 export type Type = {
   blockType: 'image';

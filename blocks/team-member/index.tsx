@@ -1,6 +1,6 @@
 import React from 'react';
 import { Block } from 'payload/types';
-import RichText from '../../components/RichText';
+import RichText from '../../components/rich-text';
 import classes from './index.module.css';
 
 export type Type = {
