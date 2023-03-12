@@ -5,8 +5,13 @@ import { Content, Type as ContentType } from '../blocks/content';
 import { Image, Type as ImageType } from '../blocks/image';
 
 import { CallToAction, CallToActionType } from '../blocks/call-to-action';
+import { MediaPattern, MediaPatternType } from '../blocks/media-pattern';
 
-export type Layout = CallToActionType | ContentType | ImageType;
+export type Layout =
+  | MediaPatternType
+  | CallToActionType
+  | ContentType
+  | ImageType;
 
 export type Type = {
   title: string;
@@ -86,5 +91,12 @@ export const Page: CollectionConfig = {
     // },
     meta,
     slug,
+    {
+      name: 'layout',
+      label: 'Page Layout',
+      type: 'blocks',
+      minRows: 1,
+      blocks: [MediaPattern, CallToAction],
+    },
   ],
 };

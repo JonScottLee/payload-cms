@@ -38,8 +38,12 @@ export const CallToAction: Block = {
   },
   fields: [
     {
-      name: 'content',
-      type: 'richText',
+      name: 'headline',
+      type: 'text',
+    },
+    {
+      name: 'body',
+      type: 'textarea',
     },
     {
       name: 'buttons',

@@ -1,4 +1,4 @@
-import { formatSlug } from '../../utilities/format-slug';
+import { formatSlug } from '../utilities/format-slug';
 import { Field } from 'payload/types';
 
 export const slug: Field = {

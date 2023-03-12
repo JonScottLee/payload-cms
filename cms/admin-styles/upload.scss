@@ -1,8 +1,15 @@
-.file-details .thumbnail {
-  align-items: center;
-  display: flex;
+.file-details {
+  .btn__content {
+    white-space: nowrap;
+  }
 
-  img {
-    height: auto;
+  .thumbnail {
+    align-items: center;
+    display: flex;
+    padding-left: 2rem;
+
+    img {
+      height: auto;
+    }
   }
 }

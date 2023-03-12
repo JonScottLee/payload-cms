@@ -1,5 +1,5 @@
 import { Field } from 'payload/types';
-import { summarizeBody } from '../../utilities/summarize-body';
+import { summarizeBody } from '../utilities/summarize-description/summarize-body';
 
 export const description: Field = {
   name: 'description',
