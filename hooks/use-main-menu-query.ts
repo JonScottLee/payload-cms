@@ -6,6 +6,8 @@ export type MainMenu = {
   updatedAt: string;
   nav: Nav[];
   logo: Logo;
+  logo_large: Logo;
+  logo_small: Logo;
   id: string;
 };
 
