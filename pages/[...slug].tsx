@@ -2,7 +2,7 @@ import React from 'react';
 import payload from 'payload';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
-import { Type as PageType } from '../collections/page';
+import { Type as PageType } from '../cms/collections/page';
 import NotFound from '../components/not-found';
 import Head from '../components/head';
 import classes from '../css/page.module.css';

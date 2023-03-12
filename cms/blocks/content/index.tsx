@@ -1,6 +1,6 @@
 import React from 'react';
 import { Block } from 'payload/types';
-import RichText from '../../components/rich-text';
+import RichText from '../../../components/rich-text';
 import classes from './index.module.css';
 
 export type Type = {
@@ -9,26 +9,15 @@ export type Type = {
   content: unknown;
 };
 
-export const TeamMember: Block = {
-  slug: 'team-member',
+export const Content: Block = {
+  slug: 'content',
   labels: {
-    singular: 'Team Member',
-    plural: 'Team Members',
+    singular: 'Content',
+    plural: 'Content Blocks',
   },
   fields: [
     {
-      name: 'name',
-      type: 'text',
-    },
-    {
-      name: 'image',
-      label: 'Image',
-      type: 'upload',
-      relationTo: 'media',
-      required: true,
-    },
-    {
-      name: 'bio',
+      name: 'content',
       type: 'richText',
     },
   ],
@@ -43,3 +32,5 @@ export const Component: React.FC<Type> = (props) => {
     </div>
   );
 };
+
+export default Content;

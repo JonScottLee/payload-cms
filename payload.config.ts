@@ -1,8 +1,8 @@
 import { buildConfig } from 'payload/config';
-import { Footer, MainMenu } from './globals';
-import { FormSubmission } from './collections/form-submission';
-import { Media } from './collections/media';
-import { Page } from './collections/page';
+import { Footer, MainMenu } from './cms/globals';
+import { FormSubmission } from './cms/collections/form-submission';
+import { Media } from './cms/collections/media';
+import { Page } from './cms/collections/page';
 import dotenv from 'dotenv';
 
 dotenv.config();

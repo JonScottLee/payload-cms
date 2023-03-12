@@ -15,6 +15,11 @@
     "isolatedModules": true,
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "blocks/image/sizes.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "cms/blocks/image/sizes.js"
+  ],
   "exclude": ["node_modules"]
 }
