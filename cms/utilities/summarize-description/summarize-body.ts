@@ -1,34 +1,6 @@
 import { FieldHook } from 'payload/types';
 import axios from 'axios';
-
-export class Description {
-  static #errorKey: string = 'Error';
-  #description: string;
-
-  constructor(description: string) {
-    this.#description = description;
-  }
-
-  static formatErrorMessage(error: string) {
-    return `${Description.#errorKey}: ${error}`;
-  }
-
-  isErrorMessage() {
-    if (!this.#description.length) return false;
-
-    return this.#description.indexOf(Description.#errorKey) > -1;
-  }
-
-  normalize() {
-    return this.#description.replace(/\r?\n|\r/g, '').trim();
-  }
-
-  isValid() {
-    if (!this.#description.length) return false;
-
-    return !this.isErrorMessage();
-  }
-}
+import { MetaDescription } from '../../fields/meta-description/model';
 
 export const summarizeBody =
   (): FieldHook =>
@@ -41,7 +13,7 @@ export const summarizeBody =
 
       const { body: newBody } = data;
 
-      const description = new Description(originalDescription);
+      const description = new MetaDescription(originalDescription);
 
       // If page body hasn't changed, and we already have a description filled out,
       // don't call the AI API to generate a new one. We already have it.
@@ -58,7 +30,9 @@ export const summarizeBody =
 
       return summary.data.result.replace(/\r?\n|\r/g, '').trim();
     } catch (err) {
-      const message = Description.formatErrorMessage(
+      // TODO: This method doesn't belong on MetaDescription; it
+      // has nothing to do with the MetaDescription.
+      const message = MetaDescription.formatErrorMessage(
         'Error parsing SEO summary from body'
       );
 
