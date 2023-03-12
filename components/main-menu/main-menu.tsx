@@ -1,6 +1,7 @@
 import { apiRoutes } from '../../api-routes';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useMainMenuQuery } from '../../hooks/use-main-menu-query';
 
 type MainMenuLinks = MainMenuLink[];
 
@@ -25,26 +26,19 @@ const getMainMenuItems = async () => {
 };
 
 export const MainMenu = () => {
-  const [navItems, setNavItems] = useState<MainMenuLinks>([]);
+  const { data } = useMainMenuQuery();
 
-  useEffect(() => {
-    axios
-      .get(apiRoutes.mainMenu)
-      .then(({ data }) => {
-        const nav: MainMenuLinks = data.nav;
-        setNavItems(data.nav);
-      })
-      .catch((err) => {
-        console.error('Error:', err);
-      });
-  }, []);
+  if (!data) return null;
 
   return (
     <nav>
       <ul>
-        {navItems &&
-          navItems.map(({ link }) => <li key={link.label}>{link.label}</li>)}
+        {data.nav.map(({ link }) => (
+          <li key={link.label}>{link.label}</li>
+        ))}
       </ul>
     </nav>
   );
+
+  return null;
 };
