@@ -5,6 +5,12 @@ export const MainMenu: GlobalConfig = {
   slug: 'main-menu',
   fields: [
     {
+      name: 'logo',
+      label: 'Logo',
+      type: 'upload',
+      relationTo: 'media',
+    },
+    {
       name: 'nav',
       label: 'Navigation',
       type: 'array',
