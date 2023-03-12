@@ -33,51 +33,57 @@ export const Page: CollectionConfig = {
       required: true,
     },
     {
-      type: 'radio',
-      name: 'heroType',
-      label: 'Hero Type',
-      required: true,
-      defaultValue: 'minimal',
-      options: [
-        {
-          label: 'Minimal',
-          value: 'minimal',
-        },
-        {
-          label: 'Content Above Image',
-          value: 'contentAboveImage',
-        },
-        {
-          label: 'Content Left of Image',
-          value: 'contentLeftOfImage',
-        },
-      ],
-    },
-    {
-      name: 'heroContent',
-      label: 'Hero Content',
-      type: 'richText',
+      name: 'body',
+      label: 'Body',
+      type: 'textarea',
       required: true,
     },
-    {
-      name: 'heroImage',
-      label: 'Hero Image',
-      type: 'upload',
-      relationTo: 'media',
-      required: true,
-      admin: {
-        condition: (_, siblingData) =>
-          siblingData?.heroType === 'contentAboveImage' ||
-          siblingData?.heroType === 'contentLeftOfImage',
-      },
-    },
-    {
-      name: 'layout',
-      label: 'Page Layout',
-      type: 'blocks',
-      minRows: 1,
-      blocks: [CallToAction, Content, Image],
-    },
+    // {
+    //   type: 'radio',
+    //   name: 'heroType',
+    //   label: 'Hero Type',
+    //   required: true,
+    //   defaultValue: 'minimal',
+    //   options: [
+    //     {
+    //       label: 'Minimal',
+    //       value: 'minimal',
+    //     },
+    //     {
+    //       label: 'Content Above Image',
+    //       value: 'contentAboveImage',
+    //     },
+    //     {
+    //       label: 'Content Left of Image',
+    //       value: 'contentLeftOfImage',
+    //     },
+    //   ],
+    // },
+    // {
+    //   name: 'heroContent',
+    //   label: 'Hero Content',
+    //   type: 'richText',
+    //   required: true,
+    // },
+    // {
+    //   name: 'heroImage',
+    //   label: 'Hero Image',
+    //   type: 'upload',
+    //   relationTo: 'media',
+    //   required: true,
+    //   admin: {
+    //     condition: (_, siblingData) =>
+    //       siblingData?.heroType === 'contentAboveImage' ||
+    //       siblingData?.heroType === 'contentLeftOfImage',
+    //   },
+    // },
+    // {
+    //   name: 'layout',
+    //   label: 'Page Layout',
+    //   type: 'blocks',
+    //   minRows: 1,
+    //   blocks: [CallToAction, Content, Image],
+    // },
     meta,
     slug,
   ],

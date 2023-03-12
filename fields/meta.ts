@@ -1,4 +1,5 @@
 import type { Field } from 'payload/types';
+import { description } from './description';
 import { keywords } from './keywords';
 import { metaTitle as title } from './meta-title';
 
@@ -17,13 +18,5 @@ export const meta: Field = {
   admin: {
     position: 'sidebar',
   },
-  fields: [
-    title,
-    {
-      name: 'description',
-      label: 'Description',
-      type: 'textarea',
-    },
-    keywords,
-  ],
+  fields: [title, description, keywords],
 };
