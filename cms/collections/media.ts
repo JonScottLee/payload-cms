@@ -25,7 +25,6 @@ export const Media: CollectionConfig = {
     read: (): boolean => true, // Everyone can read Media
   },
   upload: {
-    adminThumbnail: 'card',
     imageSizes: [
       {
         name: 'card',
