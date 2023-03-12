@@ -1,8 +1,6 @@
 import { FieldHook } from 'payload/types';
 import axios from 'axios';
 
-const keyword_extractor = require('keyword-extractor');
-
 export const extractKeywords =
   (): FieldHook =>
   async ({ value, originalDoc, data }) => {
