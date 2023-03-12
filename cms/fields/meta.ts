@@ -1,5 +1,5 @@
 import type { Field } from 'payload/types';
-import { description } from './description';
+import { description } from './meta-description/meta-description';
 import { keywords } from './keywords';
 import { metaTitle as title } from './meta-title';
 
