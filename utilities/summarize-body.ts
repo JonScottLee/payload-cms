@@ -10,11 +10,10 @@ export const summarizeBody =
       const summary = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/ask`,
         {
-          prompt: `give me short summary of "${body}"`,
+          prompt: `summarize "${body}"`,
         }
       );
 
-      console.log(summary.data.result.replace(/\r?\n|\r/g, '').trim());
       return summary.data.result.replace(/\r?\n|\r/g, '').trim();
     } catch (err) {
       const message = 'Error parsing SEO summary from body';
